@@ -30,7 +30,8 @@ secand is short for *SECure ANDroid* is basically an easy approach to improve yo
 Here are things this library will help you to secure your apps:
 
 ### Root and Emulator Detection
-It's quite a security issue when your apps installed on rooted device or emulator. So what you want to do is to check if your apps is installed on one of those things and handle them nicely. You can detect it by using this line:
+It's quite a security issue when your apps installed on rooted device or emulator.In root or emulator, device data is at risk, including gaining access to personal information such as contact lists, emails, and other data, or collecting data like credentials and passwords. With a rooted device, a user or malicious program can elevate their permissions to root and circumvent this protection giving them access to other app’s private data.<br/>
+So what you want to do is to check if your apps is installed on one of those things and handle them nicely. You can detect it by using this line:
 ```kotlin
 when (Secand.check(this)) {
     EMULATOR -> // Define what to do when the device is emulator
