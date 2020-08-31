@@ -35,7 +35,7 @@ Here are things this library will help you to secure your apps:
 It's quite a security issue when your apps installed on rooted device or emulator.In root or emulator, device data is at risk, including gaining access to personal information such as contact lists, emails, and other data, or collecting data like credentials and passwords. With a rooted device, user or malicious program can elevate their permissions to root and circumvent this protection giving them access to other app’s private data.<br/>
 So what you want to do is to check if your apps is installed on one of those things and handle them nicely. You can detect it by using this line:
 ```kotlin
-when (Secand.check(this)) {
+when (Secand.check(context)) {
     EMULATOR -> // Define what to do when the device is emulator
     ROOTED -> // Define what to do when the device is rooted
     else -> // (Optional) it means the device is safe
@@ -76,4 +76,4 @@ Proguard is all about rules, You provide it with set of rules of what you want t
   ## Other things you can do
   This library can't cover all the security for you, *that's true*. Because there are some things you need to configure it yourself on your `app` module. Here are other things   you can do to improve your android app security: 
   - SSL Pinning, It's quite easy actually. you can read how to do that [here](https://www.netguru.com/codestories/3-ways-how-to-implement-certificate-pinning-on-android)
-  - Here's tip from [Android Developer](https://developer.android.com/training/articles/security-tips)
+  - Here's another tip from [Android Developer](https://developer.android.com/training/articles/security-tips)
