@@ -24,6 +24,7 @@ secand is short for *SECure ANDroid*. It's basically an easy approach to improve
         implementation 'com.github.jimlyas:secand:${LatestVersion}'
       }
    ```
+   the latest release is [![Release](https://jitpack.io/v/jimlyas/secand.svg)](https://jitpack.io/#jimlyas/secand)
  - Gradle sync, and that's it! you can start implementing this library to your android project.
 <br/><br/>
 
