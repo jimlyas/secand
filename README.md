@@ -1,6 +1,7 @@
 # secand
-secand is short for *SECure ANDroid* is basically an easy approach to improve your android application security. If you familiar with the term of **Penetration Testing**, you must also realize a good code is not enough. By implementing security, it helps you and your apps from anyone out there that try to crack your app.
-<br/><br/>
+secand is short for *SECure ANDroid*. It's basically an easy approach to improve your android application security. If you familiar with the term of **Penetration Testing**, you must also realize a good code is not enough. By implementing security, it helps you and your apps from anyone out there that try to crack your app.
+<br/>
+
 *enough with the talk, show me how it's done!*
 <br/><br/>
 
@@ -30,13 +31,13 @@ secand is short for *SECure ANDroid* is basically an easy approach to improve yo
 Here are things this library will help you to secure your apps:
 
 ### Root and Emulator Detection
-It's quite a security issue when your apps installed on rooted device or emulator.In root or emulator, device data is at risk, including gaining access to personal information such as contact lists, emails, and other data, or collecting data like credentials and passwords. With a rooted device, a user or malicious program can elevate their permissions to root and circumvent this protection giving them access to other app’s private data.<br/>
+It's quite a security issue when your apps installed on rooted device or emulator.In root or emulator, device data is at risk, including gaining access to personal information such as contact lists, emails, and other data, or collecting data like credentials and passwords. With a rooted device, user or malicious program can elevate their permissions to root and circumvent this protection giving them access to other app’s private data.<br/>
 So what you want to do is to check if your apps is installed on one of those things and handle them nicely. You can detect it by using this line:
 ```kotlin
 when (Secand.check(this)) {
     EMULATOR -> // Define what to do when the device is emulator
     ROOTED -> // Define what to do when the device is rooted
-    else -> // (Optional) it mean the device is safe
+    else -> // (Optional) it means the device is safe
  }
 ```
 ### Obfuscation
@@ -57,7 +58,7 @@ buildTypes {
     }
 ```
 Proguard is all about rules, You provide it with set of rules of what you want to obfuscate and what you don't want to. 
-> This library defines basic of those rules. You **may need to define another rules** to your app `proguard-rules.pro` when adding another library  
+> This library defines basic of those rules. You **may need to add another rules** to your app `proguard-rules.pro` when adding another library  
 <br/>
 
  Proguard able to obfuscate class name, method name, and variable name. **But it can't** obfuscate the value of a variable. Let's take a look:
@@ -69,6 +70,9 @@ Proguard is all about rules, You provide it with set of rules of what you want t
    val bw0 = "Jimly Asshiddiqy"
   ```
   It become a problem when *for example* you store your base url in a variable. Simply store your string to `strings.xml` and this library will handle the obfuscation for you.
+  <br/><br/>
   
-  ### SSL Pinning
-  *Coming soon...*
+  ## Other things you can do
+  This library can't cover all the security for you, *that's true*. Because there are some things you need to configure it yourself on your `app` module. Here are other things   you can do to improve your android app security: 
+  - SSL Pinning, It's quite easy actually. you can read how to do that [here](https://www.netguru.com/codestories/3-ways-how-to-implement-certificate-pinning-on-android)
+  - Here's tip from [Android Developer](https://developer.android.com/training/articles/security-tips)
