@@ -52,7 +52,11 @@ class Secand {
          * @return is device rooted
          */
         private fun isRooted(ctx: Context): Boolean {
-            return RootBeer(ctx).isRooted
+            val rootBeer = RootBeer(ctx)
+            return if (rootBeer.isRooted)
+                !rootBeer.isRootedWithBusyBoxCheck
+            else
+                false
         }
     }
 }

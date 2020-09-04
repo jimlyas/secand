@@ -40,5 +40,6 @@ dependencies {
 
 //    Security
     implementation 'com.github.mofneko:EmulatorDetector:1.1.0'
+    implementation 'at.favre.lib:armadillo:1.0.0'
     implementation 'com.scottyab:rootbeer-lib:0.0.8'
 }
