@@ -71,6 +71,26 @@ Proguard is all about rules, You provide it with set of rules of what you want t
    val bw0 = "Jimly Asshiddiqy"
   ```
   It become a problem when *for example* you store your base url in a variable. Simply store your string to `strings.xml` and this library will handle the obfuscation for you.
+  ### Secure Preference
+  It's common to store variables to `SharedPreference`. But it's also known that the value that we store can be accessed through directory. To handle this, we can use encryption to make it imposibble to read what is it that we store in `SharedPreference`.
+  ```kotlin
+  // Initialize class like this
+  val mPrefs = PreferenceManager(context, "preferenceName", Gson())
+  
+  //And then use it to store your preference
+  mPrefs.saveString("keyPreference","valuePreference")
+  ```
+  Your Preference will look something like this and will be harder to read:
+  ```xml
+    <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+     <map>
+      <!-- storage random salt -->
+      <string name="23rtgegr4d5682ace841fr34t5y645u765ytgrfd">riIPjrL2WRfoh8QJXu7fWk4GGeAKlQoJl9ofABHZKlc=</string>
+      <!-- 'key1':'stringValue' -->
+      <string name="152b866fd2d63899678c21f247bb6df0d2e38072">AAAAABD/8an1zfovjJB/2MFOT9ncAAAAJaf+Z9xgzwXzp1BqTsVMnRZxR/HfRcO8lEhyKpL17QmZ5amwAYQ=</string>
+      </map>
+    </xml>
+  ```
   <br/><br/>
   
   ## Other things you can do
